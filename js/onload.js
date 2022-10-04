@@ -47,7 +47,7 @@ $(document).ready(function(){
 	d3.select('#slider0')
 		.call(
 			d3.slider()
-				.value(6)
+				.value(oName)
 				.axis(true)
 				.min(0)
 				.max(10)
@@ -61,7 +61,7 @@ $(document).ready(function(){
 	d3.select('#slider1')
 		.call(
 			d3.slider()
-				.value(10)
+				.value(aName)
 				.axis(true)
 				.min(0)
 				.max(200)
@@ -76,13 +76,13 @@ $(document).ready(function(){
 	d3.select('#slider2')
 		.call(
 			d3.slider()
-				.value(6)
+				.value(bName)
 				.axis(true)
 				.min(0)
 				.max(10)
 				.step(0.1)
 				.on("slide", function(evt, value) {
-					tb = value/2;
+					tb = value;
 					plotTree();
 					$("#tbValue").html(value);
 				})
@@ -179,7 +179,7 @@ $(document).ready(function(){
 
 
 
-	plotData("data/cucumber.tsv");
+	plotData(tsvName);
 	orderThreshHold = 1;
 
 
@@ -198,16 +198,16 @@ function plotData(dataFile){
 		dataAttributeNames = tmpAttrNames.slice(4, tmpAttrNames.length);
 
 		
-		plotTree();//plot the tree
+		plotTree(1, oName, aName, bName);//plot the tree
 		
 		plotScatter(currentDataSet);//plot the scatterplot
 	})
 }
 
-function plotTree(){
+function plotTree(init, o, a, b){
 	// console.log("ta: " + ta);
 	// console.log("tb: " + tb);
-	d3.json("data/cucumberNJ.json", function(err, treeJson){
+	d3.json(njName, function(err, treeJson){
 		tree_label = null;
 		let preprocessedData = preprocessing(currentDataSet);	
 		let D = inputdataDis;
@@ -219,40 +219,20 @@ function plotTree(){
 		// var NJ = new NeighborJoining(D, taxa, classify);
 		// NJ.buildTree();
 
-		let rootNum = 133;//446
+		let rootNum = rootName;//446
 		//for compound 653/736 679
 console.log(treeJson)
 // debugger
 		//order with distance and label
-		generateTree(treeJson, true, true, 0, 2, DBackUp, rootNum);
+		if(init == 1) {
+			generateTree(treeJson, true, true, 0, 2, DBackUp, rootNum, o, a, b);
+		} else {
+			generateTree(treeJson, true, true, 0, 2, DBackUp, rootNum);
+		}
 		console.log(tree_label);
 		drawTree(tree_label.rootNodeBackup, tree_label.treeStructureBackup, tree_label.leafAmount, "label-ordered-tree-container", tree_label.nodesToMerge, tree_label.currentLeafOrder, DBackUp);
 		
-		document.getElementById("save-btn").addEventListener("click", function(){
-			let outputSVG = document.getElementById("label-ordered-tree-container")
-			// console.log(outputSVG);
-			var s = new XMLSerializer().serializeToString(outputSVG)
-			// console.log(s);
-				// 创建a标签
-				var elementA = document.createElement('a');
-				
-				//文件的名称为时间戳加文件名后缀
-				elementA.download = rootNum + ".svg";
-				elementA.style.display = 'none';
-				
-				//生成一个blob二进制数据，内容为json数据
-				var blob = new Blob([s]);
-				
-				//生成一个指向blob的URL地址，并赋值给a标签的href属性
-				elementA.href = URL.createObjectURL(blob);
-				document.body.appendChild(elementA);
-				elementA.click();
-				document.body.removeChild(elementA);
-		})
-
 		
-	  
-	  
 		//test
 		// for(let i = 0; i < tree_label.highLightFirstStep.length; i++){
 		// 	// console.log("drawing outliers:" + tree_label.highLightFirstStep[i]);

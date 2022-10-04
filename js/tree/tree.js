@@ -3,7 +3,7 @@ var tb = 3;
 var to = 1.5;
 var chooseRoot = 796
 
-function Tree(childParent, allWeight, leafClassify, leafTaxa, rootIndex, usingOrder, D, rootNum){
+function Tree(childParent, allWeight, leafClassify, leafTaxa, rootIndex, usingOrder, D, rootNum, o, a, b){
 	this.childParent = childParent; //2D array
 	this.allWeight = allWeight; //array, index is the leaf index
 	this.leafClassify = leafClassify; //array, index is the leaf index
@@ -49,16 +49,17 @@ function Tree(childParent, allWeight, leafClassify, leafTaxa, rootIndex, usingOr
 	this.leafSeqBackup = new Array();
 	this.leafDiff = new Array();
 	this.leafPeakValley = new Array();
-	this.threshholdT = ta;//2, 100 for cucumberv
-	console.log("ta was: "+ ta);
-	//this.threshholdT = 100;
-	this.outlierT = to;//2, 1.5 for cucumber
-	console.log("to was: "+ to);
-	//this.outlierT = 1.5;//6.227985以上，将只分出2个聚类
+	if(o) {
+		this.threshholdT = a;//2, 100 for cucumberv
+		this.outlierT = o;//2, 1.5 for cucumber
+		this.peakValleyT = b;//3.6 for cucumber
+	} else {
+		this.threshholdT = ta;//2, 100 for cucumberv
+		this.outlierT = to;//2, 1.5 for cucumber
+		this.peakValleyT = tb;//3.6 for cucumber
+	}
+	
 	this.outlierSeqLen = 3;//5, 3 for cucumber
-	this.peakValleyT = tb;//3.6 for cucumber
-	console.log("tb was: "+ tb);
-	//this.peakValleyT = 0.1;
 	this.selectRoot = rootNum;//1283, 141, 133 for cucumber
 
 	this.outlierNodes = new Array();
@@ -1309,3 +1310,9 @@ Tree.prototype.assignDistillPosition = function(){
 	}
 }
 //end fix tree nodes
+
+Tree.prototype.setOAB = function(o, a, b) {
+	this.outlierT = o;
+	this.threshholdT = a;
+	this.peakValleyT = b;
+}
