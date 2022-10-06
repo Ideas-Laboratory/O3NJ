@@ -59,7 +59,7 @@ function drawTree(input_tree_root, tree_structure, leaf_amount, tree_container, 
                     treeNodeColor(tree_structure[i].classify, tree_structure[i].x);
                 let fillColor = tree_container == "ori-tree-container" ? "#f6f3f7" : "#fff";
                 circle.setAttribute("class", "leaf");
-                circle.setAttribute("r", 6);
+                circle.setAttribute("r", 3);
                 // circle.setAttribute("fill", "#888");
                 circle.setAttribute("fill", treeNodeColor(tree_structure[i].classify, tree_structure[i].x))
                 circle.setAttribute("stroke", "#000");
@@ -320,12 +320,6 @@ function drawDistilled(distill_tree_structure) {
 
         //assign mouse listener
         circle.onmouseover = function () {
-            let r = Math.random()*255;
-            let g = Math.random()*255;
-            let b = Math.random()*255;
-            let rgb = r+","+g+","+b;
-            let colorMap = ["black", "purple", "brown", "orange", "green", "red", "steelblue", "Cyan", "blue", "Fuchisis", "LawnGreen"];
-            let rand = Math.floor(Math.random()*11);
             let nodeIndex = parseInt(this.id.split("-")[this.id.split("-").length - 1]);
             if (nodeIndex == 1) {
                 for (let i = 0; i < distill_tree_structure[nodeIndex].leaves.length; i++) {

@@ -17,7 +17,7 @@ var paddingHeight = 40; //the content is 20px away from the top and bottom borde
 var paddingWidth = 40;
 // var nodeColors = [d3.hsl(207, 0.68, 0.50), d3.hsl(36, 0.86, 0.57), d3.hsl(139, 0.70, 0.45), "#743699","#ff5600", "#ff9f00", "#0f4fa8", "#00aa72", "#ff8040", "#bf8930", "#284c7e", "#207f60", "#bf6030", "#ffb740"];
 // var nodeColors = ["black", "orange", "Green", "brown", "red", "steelblue", "purple", "yellow", "Cyan", "Fuchisis", "blue"];
-var nodeColors = ["#FFFFE0", "purple", "SaddleBrown", "orange", "green", "red", "steelblue", "Cyan", "blue", "#5D478B", "LawnGreen", "#FF34B3",
+var nodeColors = ["#333","#7fc97f","#beaed4","#fdc086","#386cb0","#ffff99","#FFFFE0", "purple", "SaddleBrown", "orange", "green", "red", "steelblue", "Cyan", "blue", "#5D478B", "LawnGreen", "#FF34B3",
 "#FFDEAD", "#8B7E66", "#FF6A6A", "#008B8B", "#FFB5C5", "#EE9A49", "#FF00FF", "#FFE4E1", "#836FFF", 
 "#FFFFE0", "#CD6600", "#C0FF3E"];
 var usingOrdering = true;

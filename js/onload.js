@@ -177,8 +177,9 @@ $(document).ready(function(){
 		showTips2 = true;
 	})
 
-
-
+to = oName;
+ta = aName;
+tb = bName;
 	plotData(tsvName);
 	orderThreshHold = 1;
 
@@ -198,15 +199,13 @@ function plotData(dataFile){
 		dataAttributeNames = tmpAttrNames.slice(4, tmpAttrNames.length);
 
 		
-		plotTree(1, oName, aName, bName);//plot the tree
+		plotTree();//plot the tree
 		
 		plotScatter(currentDataSet);//plot the scatterplot
 	})
 }
 
-function plotTree(init, o, a, b){
-	// console.log("ta: " + ta);
-	// console.log("tb: " + tb);
+function plotTree(){
 	d3.json(njName, function(err, treeJson){
 		tree_label = null;
 		let preprocessedData = preprocessing(currentDataSet);	
@@ -219,17 +218,9 @@ function plotTree(init, o, a, b){
 		// var NJ = new NeighborJoining(D, taxa, classify);
 		// NJ.buildTree();
 
-		let rootNum = rootName;//446
-		//for compound 653/736 679
-console.log(treeJson)
-// debugger
+		let rootNum = rootName;
 		//order with distance and label
-		if(init == 1) {
-			generateTree(treeJson, true, true, 0, 2, DBackUp, rootNum, o, a, b);
-		} else {
-			generateTree(treeJson, true, true, 0, 2, DBackUp, rootNum);
-		}
-		console.log(tree_label);
+		generateTree(treeJson, true, true, 0, 2, DBackUp, rootNum);
 		drawTree(tree_label.rootNodeBackup, tree_label.treeStructureBackup, tree_label.leafAmount, "label-ordered-tree-container", tree_label.nodesToMerge, tree_label.currentLeafOrder, DBackUp);
 		
 		

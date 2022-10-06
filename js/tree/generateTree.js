@@ -1,4 +1,4 @@
-function generateTree(tree_data, usingOrder, usingLabel, layout, treeType, D, rootNum, o, a, b) {
+function generateTree(tree_data, usingOrder, usingLabel, layout, treeType, D, rootNum) {
     var childParent = new Array();
     var allWeight = new Array();
     var leafClassify = new Array();
@@ -19,11 +19,7 @@ function generateTree(tree_data, usingOrder, usingLabel, layout, treeType, D, ro
     // generate 3 trees
     switch (treeType) {
         case 2:
-            if(o) {
-                tree_label = new Tree(childParent, allWeight, leafClassify, leafTaxa, allWeight.length, usingOrder, D, rootNum, o, a, b);//allWeight.length is the root index
-            } else {
-                tree_label = new Tree(childParent, allWeight, leafClassify, leafTaxa, allWeight.length, usingOrder, D, rootNum);//allWeight.length is the root index
-            }
+            tree_label = new Tree(childParent, allWeight, leafClassify, leafTaxa, allWeight.length, usingOrder, D, rootNum);//allWeight.length is the root index
             tree_label.finalTree(usingOrder, usingLabel, layout, treeType);
             findMinMaxInOrder(tree_label.currentLeafOrder, D);
             break;

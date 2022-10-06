@@ -1,9 +1,6 @@
-var ta = 1;
-var tb = 3;
-var to = 1.5;
 var chooseRoot = 796
 
-function Tree(childParent, allWeight, leafClassify, leafTaxa, rootIndex, usingOrder, D, rootNum, o, a, b){
+function Tree(childParent, allWeight, leafClassify, leafTaxa, rootIndex, usingOrder, D, rootNum){
 	this.childParent = childParent; //2D array
 	this.allWeight = allWeight; //array, index is the leaf index
 	this.leafClassify = leafClassify; //array, index is the leaf index
@@ -49,15 +46,9 @@ function Tree(childParent, allWeight, leafClassify, leafTaxa, rootIndex, usingOr
 	this.leafSeqBackup = new Array();
 	this.leafDiff = new Array();
 	this.leafPeakValley = new Array();
-	if(o) {
-		this.threshholdT = a;//2, 100 for cucumberv
-		this.outlierT = o;//2, 1.5 for cucumber
-		this.peakValleyT = b;//3.6 for cucumber
-	} else {
 		this.threshholdT = ta;//2, 100 for cucumberv
 		this.outlierT = to;//2, 1.5 for cucumber
 		this.peakValleyT = tb;//3.6 for cucumber
-	}
 	
 	this.outlierSeqLen = 3;//5, 3 for cucumber
 	this.selectRoot = rootNum;//1283, 141, 133 for cucumber
@@ -248,7 +239,6 @@ Tree.prototype.init = function(usingLabel){
 	if(usingLabel && this.bindLeaves.length == 0) {
 		// this.threshhold = orderThreshHold;
 		this.threshhold = Math.pow(10, numberLength)/this.threshholdT;
-		console.log(numberLength + "this.threshhold " +this.threshhold);
 	}
 }
 
@@ -257,7 +247,6 @@ Tree.prototype.init = function(usingLabel){
  */
 Tree.prototype.createBinaryTree = function(t, left_index, right_index){
 	 if((t.index == left_index || t.index == right_index)){
-		console.log(1111);
 		 for(var i = 0; i < this.changedNodes.length-1; i++){
 			 this.changedNodes[i+1].ancestor = this.changedNodes[i];
 		 }

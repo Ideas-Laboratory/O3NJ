@@ -56,9 +56,8 @@ function plotScatter(data){
 	function handleMouseOver(d, i){
 		$("#label-ordered-tree-container-node-"+(i+1)).css({
 			"stroke" : "#000",
-			"stroke-width" : 2,
-			"r" : 6,
-			"fill": "rgba(255, 0, 0, 0.8)"
+			"stroke-width" : 2.5,
+			"r" : 4,
 		})
 		$(this).css("fill", "rgba(0, 0, 0, 0.8)");
 		// d3.select("#hc-tree-container-node-"+(i+1))
@@ -75,7 +74,6 @@ function plotScatter(data){
 			"stroke" : "#000",
 			"stroke-width" : 0,
 			"r" : 2.5,
-			"fill": "rgba(0, 0, 0, 0.1)"
 		})
 		$(this).css("fill", "rgba(0, 0, 0, 0.1)");
 		// d3.select(this)
@@ -98,14 +96,14 @@ function plotScatter(data){
 		.data(data)
 		.enter().append("circle")
 		.attr("class", "dot")
-		.attr("r", 8)
+		.attr("r", 5)
 		.attr("cx", function(d) { return x(d.x); })
 		.attr("cy", function(d) { return y(d.y); })
 		//.attr("opacity", 0.4)
 		.attr("stroke", function(d){
 			return mapColor(d.classify);
 		})
-		.attr("stroke-width", 3)
+		.attr("stroke-width", 2)
 		.attr("id", function(d){
 			return "scatter"+d.taxa;
 		})
