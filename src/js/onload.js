@@ -220,7 +220,10 @@ function plotTree(){
 
 		let rootNum = rootName;
 		//order with distance and label
+		var start=new Date().getTime();
 		generateTree(treeJson, true, true, 0, 2, DBackUp, rootNum);
+		var end=new Date().getTime();
+		console.log("time: " + (end - start));
 		drawTree(tree_label.rootNodeBackup, tree_label.treeStructureBackup, tree_label.leafAmount, "label-ordered-tree-container", tree_label.nodesToMerge, tree_label.currentLeafOrder, DBackUp);
 		
 		

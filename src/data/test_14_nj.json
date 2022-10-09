@@ -1,0 +1,186 @@
+{
+    "nodes": [
+        {
+            "index": 7,
+            "parent": 15,
+            "weight": 0.16087982775155663,
+            "classify": 1,
+            "taxa": "A7"
+        },
+        {
+            "index": 8,
+            "parent": 15,
+            "weight": 4.136446068663562,
+            "classify": 1,
+            "taxa": "A8"
+        },
+        {
+            "index": 14,
+            "parent": 16,
+            "weight": 0.6856755454341781,
+            "classify": 1,
+            "taxa": "A14"
+        },
+        {
+            "index": 15,
+            "parent": 16,
+            "weight": 1.565506945041664,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 2,
+            "parent": 17,
+            "weight": 3.9417621575768855,
+            "classify": 1,
+            "taxa": "A2"
+        },
+        {
+            "index": 16,
+            "parent": 17,
+            "weight": 4.440484106794848,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 4,
+            "parent": 18,
+            "weight": 1.4061665641865764,
+            "classify": 1,
+            "taxa": "A4"
+        },
+        {
+            "index": 17,
+            "parent": 18,
+            "weight": 1.2917638392172952,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 13,
+            "parent": 19,
+            "weight": 2.0098105955664614,
+            "classify": 1,
+            "taxa": "A13"
+        },
+        {
+            "index": 18,
+            "parent": 19,
+            "weight": 1.316098339955475,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 10,
+            "parent": 20,
+            "weight": 8.6375406522371,
+            "classify": 1,
+            "taxa": "A10"
+        },
+        {
+            "index": 12,
+            "parent": 20,
+            "weight": 1.2616323218047318,
+            "classify": 1,
+            "taxa": "A12"
+        },
+        {
+            "index": 9,
+            "parent": 21,
+            "weight": 0.18051578162998894,
+            "classify": 1,
+            "taxa": "A9"
+        },
+        {
+            "index": 19,
+            "parent": 21,
+            "weight": 21.443674483326124,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 5,
+            "parent": 22,
+            "weight": 0.5224209091775589,
+            "classify": 1,
+            "taxa": "A5"
+        },
+        {
+            "index": 20,
+            "parent": 22,
+            "weight": 2.401413522971423,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 11,
+            "parent": 23,
+            "weight": 0.8287420896753792,
+            "classify": 1,
+            "taxa": "A11"
+        },
+        {
+            "index": 21,
+            "parent": 23,
+            "weight": 2.7073271313225176,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 1,
+            "parent": 24,
+            "weight": 0.8898126139109022,
+            "classify": 1,
+            "taxa": "A1"
+        },
+        {
+            "index": 23,
+            "parent": 24,
+            "weight": 0.9274037488618023,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 3,
+            "parent": 25,
+            "weight": 0.8860683358012398,
+            "classify": 1,
+            "taxa": "A3"
+        },
+        {
+            "index": 22,
+            "parent": 25,
+            "weight": 2.3762289496793265,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 6,
+            "parent": 26,
+            "weight": 0.6305171775496085,
+            "classify": 1,
+            "taxa": "A6"
+        },
+        {
+            "index": 25,
+            "parent": 26,
+            "weight": 0.7584031365842504,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 24,
+            "parent": 27,
+            "weight": 0,
+            "classify": -1,
+            "taxa": ""
+        },
+        {
+            "index": 26,
+            "parent": 27,
+            "weight": 1.3049053992497073,
+            "classify": -1,
+            "taxa": ""
+        }
+    ]
+}

@@ -33,7 +33,7 @@ var DBackUp;
 var dataAttributes = -1; //for drawing data matrix, the number of attibutes
 var dataAttributeNames = new Array();
 
-var rooting = 0;//0->rand  1->mid
+// var rooting = 0;//0->rand  1->mid
 var clusterDistance = new Map();
 var nodeXs = new Map();
 

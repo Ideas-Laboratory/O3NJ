@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>OrthoNJ 0.2.3 bio</title>
+		<title>OrthoNJ Gallery</title>
 		
 		<!-- <script type="text/javascript" src="data/cucumber_hc.js"></script> -->
-		<script type="text/javascript" src="data/spiral_dis.js"></script>
+		<script type="text/javascript" src="data/cucumber_dis.js"></script>
 		<script type="text/javascript" src="js/lib/jquery-2.2.3.min.js"></script>
 		<script type="text/javascript" src="js/lib/d3.min.js"></script>
 		<script type="text/javascript" src="js/lib/snap.svg-min.js"></script>
@@ -36,13 +36,14 @@
 		<script type="text/javascript" src="js/parallelCoords/drawParallelCoords.js"></script>
 
 		<script type="text/javascript" src="js/widget/selectBar.js"></script>
-        <script type="text/javascript">
-            let tsvName = "data/spiral.tsv"
-            let njName = "data/spiral_nj.json"
-            let rootName = 500
-            let oName = 1;
+		<script type="text/javascript">
+            let tsvName = "data/cucumber.tsv"
+            let njName = "data/cucumberNJ.json"
+            let rootName = 133
+            let oName = 1.91;
             let aName = 3;
-            let bName = 1.5
+            let bName = 1.5;
+			let rooting = 0;
         </script>
 		<script type="text/javascript" src="js/onload.js"></script>
 
@@ -112,7 +113,7 @@
 					<div id="ctrPanel" class="ctr-panel">
 						<div id="menu1" class="menu-title"><font>THRESHOLDING</font><button class="help-btn" onclick = "alert(readme);">i</button><button id = "save-btn">save</button></div>
 						<div id="sliderPanel0" class="panel">
-							<p>Threshold for <font>ARD : </font><font id="oValue">1</font></p>
+							<p>Threshold for <font>ARD : </font><font id="oValue">1.91</font></p>
 							<div id="slider0"></div>
 						</div>
 						<div id="sliderPanel1" class="panel">
