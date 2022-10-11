@@ -160,9 +160,7 @@ class NeighborJoining{
     		let tmpObj = {};
     		tmpObj.index = value.index+1;
     		tmpObj.parent = value.parent+1;
-            if(tmpObj.index == 33)
-                tmpObj.weight = value.weight*0.6;
-            else    
+              
                 tmpObj.weight = value.weight;
             tmpObj.classify = value.classify;
     		tmpObj.taxa = value.taxa;

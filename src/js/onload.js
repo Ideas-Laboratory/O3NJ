@@ -217,6 +217,7 @@ function plotTree(){
 
 		// var NJ = new NeighborJoining(D, taxa, classify);
 		// NJ.buildTree();
+		// console.log(NJ.treeJson);
 
 		let rootNum = rootName;
 		//order with distance and label
