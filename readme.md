@@ -11,7 +11,7 @@ biology.
 O3NJ ***online demo*** can be found [here](https://ideas-laboratory.github.io/O3NJ/)  (or click title).  
 
 ### Install
-You can also download our code and open ***index.html*** with Live Server.
+You can download our code and open ***index.html*** with Live Server.
 
 ### Start
 Our system has two panels: a control panel (left) and a dashboard (right). The three views from left to right are the O3NJ tree, the distilled hierarchy, and the MDS projection.
