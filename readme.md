@@ -30,6 +30,6 @@ You can generate neighbour joining tree using:
 var NJ = new NeighborJoining(D, taxa, classify);
 NJ.buildTree();
 ```
-3. For MDS, you possibly also need 2D data after dimension reduction.
+3. You possibly also need 2D MDS data for scatterplots.
 
 If you have problems, please submit an issue.
